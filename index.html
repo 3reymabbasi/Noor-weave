@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoorWeave Fashion Commerce Platform</title>
+  <meta name="description" content="NoorWeave is the all-in-one cloud platform for Pakistani and South Asian fashion brands inventory, multi-channel sales, WhatsApp orders, and analytics." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-inner">
+      <button class="logo" onclick="goTo('home')" aria-label="NoorWeave Home">
+        <div class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 7.5V18h5v-5h4v5h5V7.5L10 2z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="logo-text dark" id="logoText">NoorWeave</span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <button class="nav-link" style="color:#F8F5F1" data-nav-color onclick="scrollToSection('features')">Features</button>
+        <button class="nav-link" style="color:#F8F5F1" data-nav-color onclick="goTo('pricing')">Pricing</button>
+        <button class="nav-link" style="color:#F8F5F1" data-nav-color onclick="scrollToSection('customers')">Customers</button>
+      </nav>
+
+      <div class="nav-actions" id="navActions">
+        <button class="nav-login" style="color:#F8F5F1" data-nav-color>Login</button>
+        <button class="btn-primary" onclick="goTo('signup')">Start Free Trial</button>
+      </div>
+
+      <button class="burger" id="burgerBtn" onclick="toggleMobile()" aria-label="Menu">
+        <svg id="burgerIcon" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6.5h16M3 11h16M3 15.5h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <svg id="closeIcon" class="hidden" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <button onclick="scrollToSection('features'); closeMobile()">Features</button>
+      <button onclick="goTo('pricing'); closeMobile()">Pricing</button>
+      <button onclick="scrollToSection('customers'); closeMobile()">Customers</button>
+      <div class="mobile-drawer-actions">
+        <button class="btn-ghost full">Login</button>
+        <button class="btn-primary full" onclick="goTo('signup'); closeMobile()">Start Free Trial</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════ HOME PAGE ═══════════ -->
+  <div class="page active" id="page-home">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-glow"></div>
+        <div class="fade-in-1">
+          <div class="hero-badge">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v2M7 11v2M1 7h2M11 7h2M3 3l1.4 1.4M9.6 9.6L11 11M3 11l1.4-1.4M9.6 4.4L11 3M7 4.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z" stroke="#CE9BA4" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span>NOW IN PAKISTAN · UAE · INDIA</span>
+          </div>
+        </div>
+        <h1 class="font-display fade-in-2">
+          Fashion commerce,<br />
+          <em class="shimmer-text" style="font-style:normal">beautifully</em><br />
+          managed.
+        </h1>
+        <p class="hero-desc fade-in-3">
+          NoorWeave is the all-in-one cloud platform for Pakistani and South Asian fashion brands  inventory, multi-channel sales, WhatsApp orders, and analytics in one dashboard.
+        </p>
+        <div class="hero-ctas fade-in-4">
+          <button class="btn-primary" onclick="goTo('signup')">
+            Start Free Trial
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="btn-ghost dark" onclick="goTo('pricing')">View Pricing</button>
+        </div>
+        <div class="hero-perks fade-in-4">
+          <div><div class="hero-perk-v">14 days</div><div class="hero-perk-l">Free trial</div></div>
+          <div><div class="hero-perk-v">No card</div><div class="hero-perk-l">Required</div></div>
+          <div><div class="hero-perk-v">5 min</div><div class="hero-perk-l">Setup</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1760613130027-3959a3eb939c?w=900&h=1100&fit=crop&auto=format" alt="South Asian bridal fashion in rich red and gold" />
+        <div class="hero-grad-l"></div>
+        <div class="hero-grad-b"></div>
+        <div class="float-card float-anim glass-dark">
+          <p class="float-card-label">Today's Orders</p>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px">
+            <span class="float-card-num">143</span>
+            <span class="float-card-up">↑ 12.4%</span>
+          </div>
+          <div class="float-bars">
+            <div class="float-bar" style="height:55%"></div>
+            <div class="float-bar" style="height:40%"></div>
+            <div class="float-bar" style="height:75%"></div>
+            <div class="float-bar" style="height:50%"></div>
+            <div class="float-bar" style="height:90%"></div>
+            <div class="float-bar" style="height:65%"></div>
+            <div class="float-bar" style="height:100%"></div>
+            <div class="float-bar" style="height:70%"></div>
+            <div class="float-bar" style="height:85%"></div>
+            <div class="float-bar" style="height:60%"></div>
+            <div class="float-bar" style="height:95%"></div>
+            <div class="float-bar active" style="height:80%"></div>
+          </div>
+        </div>
+        <div class="live-badge glass-dark">
+          <div class="live-dot"></div>
+          <div>
+            <p style="font-size:11px;color:rgba(248,245,241,0.45);font-weight:600">LIVE SYNC</p>
+            <p style="font-size:12px;color:#F8F5F1;font-weight:600">3 channels active</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+      <div class="stats-inner">
+        <div class="stat-item"><div class="stat-value font-display">1,200+</div><div class="stat-label">Fashion Brands</div></div>
+        <div class="stat-item"><div class="stat-value font-display">₨ 2.4B+</div><div class="stat-label">GMV Processed</div></div>
+        <div class="stat-item"><div class="stat-value font-display">98.9%</div><div class="stat-label">Uptime SLA</div></div>
+        <div class="stat-item"><div class="stat-value font-display">&lt; 4 min</div><div class="stat-label">Avg. Order Processing</div></div>
+      </div>
+    </section>
+
+    <!-- Customers marquee -->
+    <section class="marquee-section" id="customers">
+      <p class="marquee-label">Trusted by leading South Asian fashion brands</p>
+      <div style="overflow:hidden;position:relative">
+        <div class="marquee-track" id="marqueeTrack">
+          <!-- filled by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section" id="features">
+      <div class="features-inner">
+        <div class="features-header">
+          <div>
+            <p class="section-label">Platform Features</p>
+            <h2 class="font-display">Everything your brand needs  nothing it doesn't.</h2>
+          </div>
+          <p>Purpose-built for the way South Asian fashion brands operate  seasonal collections, WhatsApp-first customers, multi-platform selling and SKUs that span dozens of fabric and size variants.</p>
+        </div>
+        <div class="features-grid" id="featuresGrid">
+          <!-- filled by JS -->
+        </div>
+        <div class="feature-photos">
+          <div class="feature-photo">
+            <img src="https://images.unsplash.com/photo-1753162661885-34d1338d1235?w=900&h=600&fit=crop&auto=format" alt="Fashion designer using NoorWeave on a tablet" />
+            <div class="feature-photo-overlay"></div>
+            <div class="feature-photo-text">
+              <h3 class="font-display">Manage from anywhere</h3>
+              <p>Full dashboard access on tablet, mobile &amp; desktop</p>
+            </div>
+          </div>
+          <div class="feature-photo">
+            <img src="https://images.unsplash.com/photo-1753162657263-cc50d923409e?w=900&h=600&fit=crop&auto=format" alt="Fashion design team collaborating with NoorWeave" />
+            <div class="feature-photo-overlay"></div>
+            <div class="feature-photo-text">
+              <h3 class="font-display">Built for teams</h3>
+              <p>Role-based access for designers, ops, and founders</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="testimonials-inner">
+        <div class="testimonials-grid">
+          <div class="testimonials-left">
+            <p class="section-label">Customer Stories</p>
+            <h2 class="font-display">Brands that grow with NoorWeave.</h2>
+            <div class="testimonial-img">
+              <img src="https://images.unsplash.com/photo-1773439878258-3c5fa24afa75?w=800&h=1000&fit=crop&auto=format" alt="South Asian fashion model in embroidered outfit" />
+              <div class="testimonial-img-overlay"></div>
+            </div>
+          </div>
+          <div class="testimonials-right" id="testimonialsList">
+            <!-- filled by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <div class="cta-box">
+          <div class="cta-left">
+            <div class="cta-glow"></div>
+            <p class="section-label" style="position:relative">Start Today</p>
+            <h2 class="font-display">Ready to run your brand the smart way?</h2>
+            <p>Join 1,200+ South Asian fashion brands. 14-day free trial, no credit card.</p>
+            <div class="cta-btns">
+              <button class="btn-primary full" onclick="goTo('signup')">Start Free Trial</button>
+              <button class="btn-ghost dark full" onclick="goTo('pricing')">View Pricing</button>
+            </div>
+          </div>
+          <div class="cta-right">
+            <img src="https://images.unsplash.com/photo-1773439878916-eaeacd159a68?w=700&h=900&fit=crop&auto=format" alt="South Asian fashion model in traditional pink and green attire" />
+            <div class="cta-right-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /page-home -->
+
+  <!-- ═══════════ PRICING PAGE ═══════════ -->
+  <div class="page" id="page-pricing">
+    <div class="pricing-page">
+      <section class="pricing-hero">
+        <p class="section-label">Pricing</p>
+        <h1 class="font-display">Simple, transparent pricing.</h1>
+        <p>No hidden fees. Cancel anytime. 14-day free trial on every plan.</p>
+        <div class="billing-toggle">
+          <button class="billing-btn active" id="btnMonthly" onclick="setBilling('monthly')">Monthly</button>
+          <button class="billing-btn" id="btnYearly" onclick="setBilling('yearly')">
+            Yearly
+            <span class="save-badge" id="saveBadge">Save 23%</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="plans-section">
+        <div class="plans-grid" id="plansGrid">
+          <!-- filled by JS -->
+        </div>
+      </section>
+
+      <section class="compare-section">
+        <div class="compare-inner">
+          <h2 class="font-display">Full feature comparison</h2>
+          <div class="compare-table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th style="width:44%">Feature</th>
+                  <th class="center">Starter</th>
+                  <th class="center highlight">Growth</th>
+                  <th class="center">Scale</th>
+                </tr>
+              </thead>
+              <tbody id="compareBody">
+                <!-- filled by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <div class="faq-inner">
+          <h2 class="font-display">Frequently asked questions</h2>
+          <div class="faq-list" id="faqList">
+            <!-- filled by JS -->
+          </div>
+        </div>
+      </section>
+    </div>
+  </div><!-- /page-pricing -->
+
+  <!-- ═══════════ SIGNUP PAGE ═══════════ -->
+  <div class="page signup-page" id="page-signup">
+    <div class="signup-photo">
+      <img src="https://images.unsplash.com/photo-1753162661809-ce0cb99b6fdb?w=800&h=1100&fit=crop&auto=format" alt="Fashion designer working in studio" />
+      <div class="signup-photo-overlay"></div>
+      <div class="signup-photo-content">
+        <button class="logo" onclick="goTo('home')" aria-label="Home">
+          <div class="logo-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 7.5V18h5v-5h4v5h5V7.5L10 2z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="logo-text dark">NoorWeave</span>
+        </button>
+        <div>
+          <p class="signup-quote">"NoorWeave changed how we run our brand  everything is finally in one place."</p>
+          <div class="signup-author">
+            <div class="author-avatar" style="width:42px;height:42px;font-size:13px">FM</div>
+            <div>
+              <p style="font-size:14px;font-weight:600;color:#F8F5F1">Fatima Mirza</p>
+              <p style="font-size:12px;color:rgba(248,245,241,0.5)">Founder, Mirza House of Fashion — Lahore</p>
+            </div>
+          </div>
+          <div class="signup-metrics">
+            <div class="signup-metric">
+              <div class="signup-metric-v font-display">70%</div>
+              <div class="signup-metric-l">Faster processing</div>
+            </div>
+            <div class="signup-metric">
+              <div class="signup-metric-v font-display">3×</div>
+              <div class="signup-metric-l">Sales growth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="signup-form-panel">
+      <div class="signup-form-inner">
+
+        <!-- Step indicator -->
+        <div class="step-indicator" id="stepIndicator">
+          <div class="step-row">
+            <div class="step-item">
+              <div class="step-circle active" id="sc1">1</div>
+              <span class="step-label active" id="sl1">Account</span>
+            </div>
+            <div class="step-line" id="line1"></div>
+            <div class="step-item">
+              <div class="step-circle" id="sc2">2</div>
+              <span class="step-label" id="sl2">Brand</span>
+            </div>
+            <div class="step-line" id="line2"></div>
+            <div class="step-item">
+              <div class="step-circle" id="sc3">3</div>
+              <span class="step-label" id="sl3">Plan</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 1: Account -->
+        <div id="signupStep1">
+          <h2 class="font-display">Create your account</h2>
+          <p class="form-sub">Start your 14-day free trial  no credit card needed.</p>
+          <div class="form-fields">
+            <div class="form-group">
+              <label for="fName">Full Name</label>
+              <input class="field" id="fName" type="text" placeholder="Fatima Mirza" autocomplete="name" />
+              <p class="form-error hidden" id="errName"></p>
+              <p class="form-ok hidden" id="okName">Looks good!</p>
+            </div>
+            <div class="form-group">
+              <label for="fEmail">Email Address</label>
+              <input class="field" id="fEmail" type="email" placeholder="fatima@yourbrand.com" autocomplete="email" />
+              <p class="form-error hidden" id="errEmail"></p>
+              <p class="form-ok hidden" id="okEmail">Valid email address ✓</p>
+            </div>
+            <div class="form-group">
+              <label for="fPassword">Password</label>
+              <div class="pw-wrap">
+                <input class="field" id="fPassword" type="password" placeholder="Minimum 8 characters" autocomplete="new-password" />
+                <button type="button" class="pw-toggle" id="pwToggle" onclick="togglePw()" aria-label="Toggle password">
+                  <svg id="eyeIcon" width="17" height="17" viewBox="0 0 17 17" fill="none"><ellipse cx="8.5" cy="8.5" rx="7" ry="5" stroke="currentColor" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                  <svg id="eyeOffIcon" class="hidden" width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M2 2l13 13M7 6.2A2.5 2.5 0 0110.8 10M3.5 4.8C2 6.1 1 8 1 8s2.5 5.5 7.5 5.5c1.5 0 2.9-.5 4-1.3M6 2.8C6.8 2.3 7.6 2 8.5 2c5 0 7.5 5.5 7.5 5.5s-.8 1.9-2.5 3.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+              <div class="pw-strength" id="pwStrength">
+                <div class="pw-bar" id="pb0"></div>
+                <div class="pw-bar" id="pb1"></div>
+                <div class="pw-bar" id="pb2"></div>
+                <div class="pw-bar" id="pb3"></div>
+              </div>
+              <p class="form-error hidden" id="errPassword"></p>
+            </div>
+          </div>
+          <div style="margin-top:28px">
+            <button class="btn-primary full" onclick="signupNext()">
+              Continue
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <p class="signin-link">Already have an account? <a href="#">Sign in</a></p>
+        </div>
+
+        <!-- Step 2: Brand -->
+        <div id="signupStep2" class="hidden">
+          <h2 class="font-display">About your brand</h2>
+          <p class="form-sub">Help us personalise your NoorWeave experience.</p>
+          <div class="form-fields">
+            <div class="form-group">
+              <label for="fBrand">Brand Name</label>
+              <input class="field" id="fBrand" type="text" placeholder="Mirza House of Fashion" />
+              <p class="form-error hidden" id="errBrand"></p>
+            </div>
+            <div class="form-group">
+              <label for="fCategory">Fashion Category</label>
+              <div class="select-wrap">
+                <select class="field" id="fCategory">
+                  <option value="" disabled selected>Select primary category</option>
+                  <option>Pret / Ready-to-Wear</option>
+                  <option>Luxury &amp; Couture</option>
+                  <option>Streetwear / Urban</option>
+                  <option>Kids Fashion</option>
+                  <option>Bridal &amp; Formal</option>
+                  <option>Modest Fashion / Abayas</option>
+                  <option>Accessories</option>
+                  <option>Multi-category</option>
+                </select>
+                <span class="select-chevron">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 5l4.5 5L12 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <p class="form-error hidden" id="errCategory"></p>
+            </div>
+            <div class="form-group">
+              <label for="fWebsite">Website or Instagram <span style="color:#A8A29E;font-weight:400">(optional)</span></label>
+              <input class="field" id="fWebsite" type="text" placeholder="instagram.com/yourbrand or yourbrand.pk" />
+            </div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-back" onclick="signupBack()">Back</button>
+            <div style="flex:1">
+              <button class="btn-primary full" onclick="signupNext()">
+                Continue
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Plan -->
+        <div id="signupStep3" class="hidden">
+          <h2 class="font-display">Choose your plan</h2>
+          <p class="form-sub">Start free — upgrade, downgrade, or cancel anytime.</p>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px" id="signupPlans">
+            <!-- filled by JS -->
+          </div>
+          <div class="form-nav">
+            <button class="btn-back" onclick="signupBack()">Back</button>
+            <div style="flex:1">
+              <button class="btn-primary full" onclick="signupNext()">
+                Create Account
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Welcome -->
+        <div id="signupStep4" class="hidden welcome-box">
+          <div class="welcome-icon">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M7 17l7 7 13-13" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h2 class="font-display" id="welcomeTitle">Welcome to NoorWeave!</h2>
+          <p class="form-sub" style="margin-bottom:32px">Your 14-day free trial has started. Your account is set up and ready  let's build your fashion business smarter.</p>
+          <div class="next-steps">
+            <p class="next-steps-label">Your next steps</p>
+            <div class="next-step"><div class="next-num">1</div><p>Connect your first sales channel (website, Instagram, or WhatsApp)</p></div>
+            <div class="next-step"><div class="next-num">2</div><p>Import your product catalogue or start adding SKUs</p></div>
+            <div class="next-step"><div class="next-num">3</div><p>Invite your team members and set permissions</p></div>
+            <div class="next-step"><div class="next-num">4</div><p>Explore the analytics dashboard</p></div>
+          </div>
+          <button class="btn-primary full">Go to Dashboard</button>
+          <button class="back-home" onclick="goTo('home')">Back to home</button>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /page-signup -->
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-glow"></div>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="pointer-events:none">
+            <div class="logo-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 7.5V18h5v-5h4v5h5V7.5L10 2z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="logo-text dark">NoorWeave</span>
+          </div>
+          <p>The fashion commerce platform built for South Asia.</p>
+          <div class="footer-socials">
+            <button class="social-btn">IG</button>
+            <button class="social-btn">WA</button>
+            <button class="social-btn">LI</button>
+            <button class="social-btn">TW</button>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Product</p>
+          <a href="#" class="footer-link" onclick="event.preventDefault();scrollToSection('features')">Features</a>
+          <a href="#" class="footer-link" onclick="event.preventDefault();goTo('pricing')">Pricing</a>
+          <a href="#" class="footer-link">Changelog</a>
+          <a href="#" class="footer-link">Integrations</a>
+          <a href="#" class="footer-link">Roadmap</a>
+        </div>
+        <div>
+          <p class="footer-col-title">Company</p>
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Press Kit</a>
+        </div>
+        <div>
+          <p class="footer-col-title">Resources</p>
+          <a href="#" class="footer-link">Documentation</a>
+          <a href="#" class="footer-link">Help Center</a>
+          <a href="#" class="footer-link">System Status</a>
+          <a href="#" class="footer-link">Community</a>
+          <a href="#" class="footer-link">Contact Sales</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 NoorWeave Technologies Pvt. Ltd. Lahore, Pakistan</p>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
